@@ -1,0 +1,56 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Trebuchet MS', sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+section div {
+    border-radius: 50px;
+    border: 2px solid #000;
+    height: 40px;
+    width: 40px;
+    margin: 0 4px;
+}
+
+h2 {
+    width: 100%;
+    text-align: center;
+}
+
+.bleu {
+    background-color: blue;
+}
+
+.violet {
+    background-color: purple;
+}
+
+.vert {
+    background-color: green;
+}
+
+.rouge {
+    background-color: red;
+}
+
+.jaune {
+    background-color: yellow;
+}
+
+.noir {
+    background-color: black;
+}
