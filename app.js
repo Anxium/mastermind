@@ -10,15 +10,6 @@ for(let r=0; r<4; r++) {
     solution.push(couleur[random].className);
 }
 
-let search = new Array();
-let boule = new Array();
-let count = 0;
-let bouleR = 0;
-let bouleN = 0;
-let bouleC = 0;
-let solution1 = solution.slice();
-let essais = 0;
-
 // Fonction de reset de données
 const dataReset = () => {
     count = 0;
@@ -29,7 +20,11 @@ const dataReset = () => {
     bouleC = 0;
     solution1 = solution.slice();
 }
+dataReset();
 
+let essais = 0;
+
+// Fonction du jeu
 const jeu = () => {
     for(let i = 0; i<couleur.length; i++) { // Boucle sur toutes les couleurs
         couleur[i].addEventListener('click', () => {
