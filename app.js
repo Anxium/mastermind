@@ -11,8 +11,17 @@ for(let r=0; r<4; r++) {
     solution.push(couleur[random].className);
 }
 
+let essais = 0;
+let count = 0;
+let search = [];
+let boule = [];
+let bouleR = 0;
+let bouleN = 0;
+let bouleC = 0;
+let solution1 = solution.slice();
+
 // Fonction de reset de données
-const dataInit = () => {
+const dataReset = () => {
     count = 0;
     search = [];
     boule = [];
@@ -21,9 +30,6 @@ const dataInit = () => {
     bouleC = 0;
     solution1 = solution.slice();
 }
-dataInit();
-
-let essais = 0;
 
 // Fonction du jeu
 const jeu = () => {
@@ -76,7 +82,7 @@ const jeu = () => {
                     historique[y+4].className = boule[y];
                 }
                 
-                dataInit();
+                dataReset();
             }
         })
     }
@@ -86,7 +92,7 @@ const jeu = () => {
         reponse.forEach(r => {
             r.className = "";
         })
-        dataInit();
+        dataReset();
     });
 }
 jeu();
