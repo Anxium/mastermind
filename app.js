@@ -4,14 +4,15 @@ let couleur = document.querySelectorAll('.choice div');
 let historique = document.querySelectorAll('.historique div');
 let reset = document.querySelector('.reset');
 
-let solution = new Array();
+// Création aléatoire de la solution
+let solution = [];
 for(let r=0; r<4; r++) {
     random = Math.floor(Math.random() * Math.floor(couleur.length));
     solution.push(couleur[random].className);
 }
 
 // Fonction de reset de données
-const dataReset = () => {
+const dataInit = () => {
     count = 0;
     search = [];
     boule = [];
@@ -20,7 +21,7 @@ const dataReset = () => {
     bouleC = 0;
     solution1 = solution.slice();
 }
-dataReset();
+dataInit();
 
 let essais = 0;
 
@@ -75,7 +76,7 @@ const jeu = () => {
                     historique[y+4].className = boule[y];
                 }
                 
-                dataReset();
+                dataInit();
             }
         })
     }
@@ -85,8 +86,7 @@ const jeu = () => {
         reponse.forEach(r => {
             r.className = "";
         })
-        dataReset();
+        dataInit();
     });
 }
-
 jeu();
