@@ -17,6 +17,7 @@ let bouleR = 0;
 let bouleN = 0;
 let bouleC = 0;
 let solution1 = solution.slice();
+let essais = 0;
 
 // Fonction de reset de données
 const dataReset = () => {
@@ -45,6 +46,13 @@ const jeu = () => {
             count++;
             
             if(count>=4) {
+
+                essais++;
+
+                if(bouleN >= 4) {
+                    alert(`Bravo! Vous avez gagné en ${essais} essais! \nLa partie va maintenant se relancer.`)
+                    document.location.reload();
+                }
     
                 for(let z=0; z<solution1.length; z++) {
                     for(let m=0; m<search.length; m++) {
@@ -71,7 +79,7 @@ const jeu = () => {
                     reponse[y].className = "";
                     historique[y+4].className = boule[y];
                 }
-    
+                
                 dataReset();
             }
         })
